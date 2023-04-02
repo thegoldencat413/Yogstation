@@ -1,0 +1,4 @@
+author: " BurgerBB"
+delete-after: true 
+changes: 
+  - experiment: "Increases immersion by requiring all access-requiring doors to be swiped with ID to open."
