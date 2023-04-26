@@ -35,7 +35,7 @@
 /obj/item/gun/ballistic/bow/dropped()
 	. = ..()
 	if(drop_release_draw && !QDELING(src))
-		addtimer(CALLBACK(src, .proc/release_draw_if_not_held))
+		addtimer(CALLBACK(src, PROC_REF(release_draw_if_not_held)))
 
 /obj/item/gun/ballistic/bow/proc/release_draw_if_not_held()
 	if(!ismob(loc))
@@ -173,7 +173,7 @@
 	. = ..()
 	if(recharge_time)
 		TIMER_COOLDOWN_START(src, "arrow_recharge", recharge_time)
-		addtimer(CALLBACK(src, .proc/end_cooldown), recharge_time)
+		addtimer(CALLBACK(src, PROC_REF(end_cooldown)), recharge_time)
 
 /obj/item/gun/ballistic/bow/energy/proc/end_cooldown()
 	playsound(src, 'sound/effects/sparks4.ogg', 25, 0)
